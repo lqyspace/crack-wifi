@@ -44,10 +44,10 @@ if __name__ == "__main__":
     pwd_num = 100000
     stri = r"!@#$%^&*.\|[]{};'?/-_(),:+=><`~"
     passwordrange = string.digits + string.ascii_letters + stri
-    for i in range(10, 11):
+    for i in range(8, 17):
         obs.put((pwd_num, i))
     with lock:
-        # 启动4个线程
+        # 启动5个线程
         for j in range(5):
             t = threading.Thread(target=makePwdtxt, args=(obs,), name=f'makePwd{j}号')
             t.start()
